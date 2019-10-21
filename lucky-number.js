@@ -11,3 +11,21 @@ function findLuckyNumberPosition(luckyNumber, minNumber, maxNumber) {
   }
   return position;
 }
+
+
+function recursiveFindLuckyNumberPosition(number, memo) {
+  let matchRegex = /^[4,7]+$/g;
+
+  memo = memo || [];
+
+  if (number === 4) {
+    memo.push(number);
+    return memo.length;
+  }
+
+  if(String(number).match(matchRegex)){
+    memo.push(number);
+  }
+
+  return recurPosition(number - 1, memo);
+}
