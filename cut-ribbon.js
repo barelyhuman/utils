@@ -1,4 +1,4 @@
-function cutRibbons(length, memo){
+function cutRibbons(length, splitInput,memo){
   memo = memo || {};
   let ans = -1;
     
