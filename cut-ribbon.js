@@ -1,7 +1,7 @@
-function cutRibbons(length, splitInput,memo){
+function split(length, splitInput, memo) {
   memo = memo || {};
   let ans = -1;
-    
+
   if (memo[length]) {
     return memo[length];
   }
@@ -10,9 +10,9 @@ function cutRibbons(length, splitInput,memo){
     return 0;
   }
 
-  splitInput.forEach(item=>{
-    if(length>=item){
-      ans = Math.max(ans,1+split(length-item,memo));
+  splitInput.forEach(item => {
+    if (length >= item) {
+      ans = Math.max(ans, 1 + split(length - item, splitInput, memo));
     }
   });
 
@@ -21,3 +21,5 @@ function cutRibbons(length, splitInput,memo){
   return ans;
 }
 
+
+split(7, [5, 5, 2])
